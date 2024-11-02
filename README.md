@@ -15,8 +15,8 @@ Na analytickém oddělení nezávislé společnosti, která se zabývá životn�
 **Výstupy projektu**
 Výstupem projektu budou dvě hlavní tabulky v databázi, ze kterých se požadovaná data dají získat:
 
--t_{jmeno}_{prijmeni}_project_SQL_primary_final: Data o mzdách a cenách potravin za Českou republiku sjednocených na totožné porovnatelné období.
--t_{jmeno}_{prijmeni}_project_SQL_secondary_final: Dodatečná data o dalších evropských státech.
+- t_{jmeno}_{prijmeni}_project_SQL_primary_final: Data o mzdách a cenách potravin za Českou republiku sjednocených na totožné porovnatelné období.
+- t_{jmeno}_{prijmeni}_project_SQL_secondary_final: Dodatečná data o dalších evropských státech.
 
 **SQL Skripty**
 Připravíme sadu SQL skriptů, které z výše uvedených tabulek získají datový podklad k odpovězení na vytyčené výzkumné otázky.
