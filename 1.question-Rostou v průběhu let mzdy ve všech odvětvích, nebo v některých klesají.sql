@@ -32,7 +32,7 @@ WHERE
 		AND payroll_year BETWEEN 2000 AND 2021
 GROUP BY payroll_year ;
 
- -- sumy mezd pro určité odvětvý a určitý rok
+ -- sumy mezd pro určité odvětví a určitý rok
 
 SELECT 
 	industry_branch_code ,
