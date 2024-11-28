@@ -3,7 +3,7 @@
 /*
  * 1. mzdy - vytvoření view
  * 		připojení názvu odvětví k tabulce se mzdami (czechia_payroll_industry_branch)
- * 		odstranění nul (důverných informací)
+ * 		odstranění nul (důvěrných informací)
  * 		odebrání průměrného počtu zaměstnanců
  *  	odebrání počtu osob
  * 		odebrání přepočtených změstnaců
@@ -11,7 +11,7 @@
 
 CREATE VIEW czechia_payroll_per_industry_branch AS
 SELECT 
-	value,
+	sum(value) AS payroll_per_year,
 	industry_branch_code ,
 	name AS industry_branch_name,
 	payroll_year
@@ -21,8 +21,9 @@ FROM czechia_payroll AS cp
 WHERE
 		value IS NOT NULL AND value_type_code = '5958'
 		AND unit_code = '200'
-		AND calculation_code = '100';
-
+		AND calculation_code = '100'
+GROUP BY payroll_year, industry_branch_code 
+ORDER BY payroll_year ;
 /*
  * 2. ceny - vytvoření view
  * 		vytažení roku z datumu (date_to)

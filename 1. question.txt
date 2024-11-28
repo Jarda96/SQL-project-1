@@ -1,0 +1,93 @@
+**Rostou v průběhu let mzdy ve všech odvětvích, nebo v některých klesají?**
+
+
+Mzdy v průběhu let vykazují růst ve většině odvětví, ale jsou zde určité sektory, kde dochází k poklesům.
+
+- Každoroční růst: Sektory C (Zpracovatelský průmysl), H (Doprava a skladování), N (Administrativní a podpůrné činnosti), Q (Zdravotní a sociální péče), S (Ostatní činnosti)
+
+- Převážně růst s občasnými poklesy: Většina ostatních sektorů, například sektor A (Zemědělství), sektor E (Zásobování vodou), sektor F (Stavebnictví), sektor G (Velkoobchod a maloobchod), sektor I (Ubytování a stravování), sektor J (Informační a komunikační činnosti), sektor K (Peněžnictví a pojišťovnictví), sektor L (Činnosti v oblasti nemovitostí), sektor M (Činnosti v oblasti nemovitostí), sektor P (Vzdělávání), sektor R (Kulturní a zábavní činnosti)
+
+- Výraznější období poklesu: Sektory B (Těžba a dobývání) a D (Výroba a rozvod elektřiny) měly významné poklesy v letech 2013–2016.
+
+Celkově lze říci, že mzdy v různých odvětvích obecně rostou, přesto existují specifická období a sektory, kde došlo k poklesu. Nejčastější pokles byl zaznamenán v letech 2009 a 2013.
+
+
+Níže naleznete jednotlivá odvětví a jejich poklesy:
+
+Mzdy pro sektor A: Zemědělství, lesnictví, rybářství
+
+	- kromě roku 2009 mzdy v průběhu let rostou
+
+Mzdy pro sektor B: Těžba a dobývání
+
+	- v roce 2009 pokles, poté růst a mezi lety 2013 a 2016 pokles
+	- od roku 2017 růst
+
+Mzdy pro sektor C: Zpracovatelský průmysl
+
+	- každoroční růst
+
+Mzdy pro sektor D: Výroba a rozvod elektřiny, plynu, tepla a klimatiz. vzduchu
+
+	- v roce 2013 pokles, poté růst a mezi lety 2013 a 2016 pokles
+	- od roku 2017 růst
+
+Mzdy pro sektor E: Zásobování vodou; činnosti související s odpady a sanacemi
+	
+	- kromě roku 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor F: Stavebnictví
+	
+	- kromě roku 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor G: Velkoobchod a maloobchod; opravy a údržba motorových vozidel
+
+	- kromě let 2009 a 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor H: Doprava a skladování
+
+	- každoroční růst
+
+Mzdy pro sektor I: Ubytování, stravování a pohostinství
+
+	- kromě let 2009 a 2011 mzdy v průběhu let rostou
+
+Mzdy pro sektor J: Informační a komunikační činnosti
+
+	- kromě roku 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor K: Peněžnictví a pojišťovnictví
+
+	- kromě roku 2013 mzdy v průběhu let rostou (ale až v roce 2017 se dostávají nad mzdy v roce 2012)
+
+Mzdy pro sektor L: Činnosti v oblasti nemovitostí
+	
+	- kromě roku 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor M: Činnosti v oblasti nemovitostí
+
+	- kromě roku 2010 a 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor N: Administrativní a podpůrné činnosti
+
+	- každoroční růst
+
+Mzdy pro sektor O: Veřejná správa a obrana; povinné sociální zabezpečení
+
+	- v 2010 a 2011 pokles, poté růst (ale až v roce 2014 se dostávají nad mzdy v roce 2009)
+
+Mzdy pro sektor P: Vzdělávání
+
+	- kromě roku 2010 mzdy v průběhu let rostou
+
+Mzdy pro sektor Q: Zdravotní a sociální péče
+		
+	- každoroční růst
+
+Mzdy pro sektor R: Kulturní, zábavní a rekreační činnosti
+
+	- kromě roku 2011 a 2013 mzdy v průběhu let rostou
+
+Mzdy pro sektor S: Ostatní činnosti
+
+	- každoroční růst
