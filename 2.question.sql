@@ -4,8 +4,8 @@
 -- Výpočet množství koupeného mléka za rok 2006
 
 SELECT 
-	round(AVG(payroll_per_year)/avg_value) AS number_of_bought_milk_per_year,
-	avg_value,
+	round(AVG(payroll_per_year)/avg_price) AS number_of_bought_milk_per_year,
+	avg_price,
 	price_category_name ,
 	price_value ,
 	price_unit ,
@@ -18,8 +18,8 @@ WHERE price_category_name = 'Mléko polotučné pasterované'
 -- Výpočet množství koupeného chleba za rok 2006
 
 SELECT 
-	round(AVG(payroll_per_year)/avg_value) AS number_of_bought_bread_per_year,
-	avg_value,
+	round(AVG(payroll_per_year)/avg_price) AS number_of_bought_bread_per_year,
+	avg_price,
 	price_category_name ,
 	price_value ,
 	price_unit ,
@@ -33,8 +33,8 @@ WHERE price_category_name = 'Chléb konzumní kmínový'
 -- Výpočet množství koupeného mléka za rok 2018
 
 SELECT 
-	round(AVG(payroll_per_year)/avg_value) AS number_of_bought_milk_per_year,
-	avg_value,
+	round(AVG(payroll_per_year)/avg_price) AS number_of_bought_milk_per_year,
+	avg_price,
 	price_category_name ,
 	price_value ,
 	price_unit ,
@@ -46,8 +46,8 @@ WHERE price_category_name = 'Mléko polotučné pasterované'
 -- Výpočet množství koupeného chleba za rok 2018
 
 SELECT 
-	round(AVG(payroll_per_year)/avg_value) AS number_of_bought_bread_per_year,
-	avg_value,
+	round(AVG(payroll_per_year)/avg_price) AS number_of_bought_bread_per_year,
+	avg_price,
 	price_category_name ,
 	price_value ,
 	price_unit ,

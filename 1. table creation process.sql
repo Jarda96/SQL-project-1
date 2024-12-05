@@ -33,7 +33,7 @@ ORDER BY payroll_year ;
 
 CREATE VIEW czechia_price_per_category as	
 SELECT
-	round(avg(value)) AS avg_value,
+	round(avg(value)) AS avg_price,
 	name AS price_category_name,
 	price_value,
 	price_unit,
