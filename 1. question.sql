@@ -7,9 +7,18 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
-GROUP BY payroll_year, industry_branch_code
+GROUP BY industry_branch_code, payroll_year
 ORDER BY industry_branch_code, payroll_year ;
 
 
@@ -23,7 +32,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'A'
 GROUP BY payroll_year, industry_branch_code
@@ -34,7 +52,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'B'
 GROUP BY payroll_year, industry_branch_code
@@ -45,7 +72,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'C'
 GROUP BY payroll_year, industry_branch_code
@@ -56,7 +92,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'D'
 GROUP BY payroll_year, industry_branch_code
@@ -67,7 +112,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'E'
 GROUP BY payroll_year, industry_branch_code
@@ -78,7 +132,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'F'
 GROUP BY payroll_year, industry_branch_code
@@ -89,7 +152,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'G'
 GROUP BY payroll_year, industry_branch_code
@@ -100,7 +172,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'H'
 GROUP BY payroll_year, industry_branch_code
@@ -111,7 +192,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'I'
 GROUP BY payroll_year, industry_branch_code
@@ -122,7 +212,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'J'
 GROUP BY payroll_year, industry_branch_code
@@ -133,7 +232,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'K'
 GROUP BY payroll_year, industry_branch_code
@@ -144,7 +252,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'L'
 GROUP BY payroll_year, industry_branch_code
@@ -155,7 +272,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'M'
 GROUP BY payroll_year, industry_branch_code
@@ -166,7 +292,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'N'
 GROUP BY payroll_year, industry_branch_code
@@ -177,7 +312,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'O'
 GROUP BY payroll_year, industry_branch_code
@@ -188,7 +332,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'P'
 GROUP BY payroll_year, industry_branch_code
@@ -199,7 +352,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'Q'
 GROUP BY payroll_year, industry_branch_code
@@ -210,7 +372,16 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'R'
 GROUP BY payroll_year, industry_branch_code
@@ -221,10 +392,21 @@ SELECT
 	payroll_per_year,
 	industry_branch_code,
 	industry_branch_name,
-	payroll_year 
+	payroll_year ,
+	LAG(payroll_per_year) OVER (
+								PARTITION BY industry_branch_code
+								ORDER BY payroll_year) AS previous_year, 
+	payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) AS payroll_difference,
+	CASE 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) > 0 THEN "increase" 
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) < 0 THEN "decrease"
+		WHEN payroll_per_year - LAG(payroll_per_year) OVER (PARTITION BY industry_branch_code ORDER BY payroll_year) = 0 THEN "stagnation"
+	END	AS trend
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 WHERE industry_branch_code = 'S'
 GROUP BY payroll_year, industry_branch_code
 ORDER BY industry_branch_code, payroll_year ;
+
+
 
 

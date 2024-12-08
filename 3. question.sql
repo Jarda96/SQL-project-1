@@ -32,7 +32,11 @@ SELECT
 	price_category_name,
 	price_value,
 	price_unit,
-	round(avg(percent_increase),1) AS avg_percent_increase_per_category_name 
+	round(avg(percent_increase),1) AS avg_percent_increase_per_category_name,
+	CASE
+		WHEN round(avg(percent_increase),1) > 0 THEN "price decrease"
+		WHEN round(avg(percent_increase),1) < 0 THEN "price increase"
+	END trend
 FROM cte_avg_percent_increase
 GROUP BY price_category_name
 ORDER BY avg_percent_increase_per_category_name desc;

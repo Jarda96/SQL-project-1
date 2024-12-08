@@ -19,7 +19,8 @@ FROM czechia_payroll AS cp
 	JOIN czechia_payroll_industry_branch AS cpib
 	ON cpib.code = cp.industry_branch_code
 WHERE
-		value IS NOT NULL AND value_type_code = '5958'
+		value IS NOT NULL
+		AND value_type_code = '5958'
 		AND unit_code = '200'
 		AND calculation_code = '100'
 GROUP BY payroll_year, industry_branch_code 

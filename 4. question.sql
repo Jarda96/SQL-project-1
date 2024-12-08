@@ -56,6 +56,7 @@ GROUP BY price_year;
 
 
 
+-- výpočet rozdílu meziročního nárůstu cen potravin a mezd
 -- join obou views
 
 SELECT
@@ -63,7 +64,13 @@ SELECT
 	sum_of_avg_price,
 	price_percent_increase,
 	payroll_per_year,
-	payroll_percent_increase
+	payroll_percent_increase,
+	price_percent_increase-payroll_percent_increase AS percent_increase_difference,
+	CASE
+		WHEN price_percent_increase-payroll_percent_increase < -10 THEN "significant increase"
+		WHEN price_percent_increase-payroll_percent_increase < 0 THEN "increase"
+		ELSE "decrease"
+	END AS status	
 FROM 
 	price_percent_increase_per_year AS ppipy 
 	JOIN payroll_percent_increase_per_year AS ppipy2
