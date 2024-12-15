@@ -9,7 +9,7 @@
  * 		odebrání přepočtených změstnaců
  */
 
-CREATE VIEW czechia_payroll_per_industry_branch AS
+CREATE VIEW v_czechia_payroll_per_industry_branch AS
 SELECT 
 	sum(value) AS payroll_per_year,
 	industry_branch_code ,
@@ -32,7 +32,7 @@ ORDER BY payroll_year ;
  * 	 	připojení druhů potravin (czechia_price_category)
  */
 
-CREATE VIEW czechia_price_per_category as	
+CREATE VIEW v_czechia_price_per_category  as	
 SELECT
 	round(avg(value)) AS avg_price,
 	name AS price_category_name,
@@ -44,15 +44,31 @@ FROM czechia_price AS cp
 	ON cpc.code = cp.category_code
 GROUP BY category_code, price_year;
 
-
 /*
- * 3. finální vytvoření tabulky propojením view s tabulkou mezd a view s tabulkou cen
+ * 3. HDP - vytvoření view	
  */
 
-CREATE TABLE t_jaroslav_cermak_project_SQL_primary_final
+CREATE VIEW v_czechia_gdp as
+SELECT 
+	country,
+	YEAR AS gdp_year,
+	GDP
+FROM economies AS e
+WHERE country = 'Czech Republic' AND GDP IS NOT NULL;
+
+/*
+ * 3. finální vytvoření tabulky propojením view s tabulkou mezd, view s tabulkou cen a s view s HDP
+ */
+
+CREATE TABLE t_jaroslav_cermak_project_SQL_primary_final as
 SELECT 
 	*
 FROM
-	czechia_payroll_per_industry_branch AS cppib
-	JOIN czechia_price_per_category AS cppc 
-	ON cppc.price_year = cppib.payroll_year;
+	v_czechia_payroll_per_industry_branch AS cppib
+	JOIN v_czechia_price_per_category  AS cppc 
+		ON cppc.price_year = cppib.payroll_year
+	JOIN v_czechia_gdp AS cg
+		ON cppc.price_year = cg.gdp_year;
+
+	
+	

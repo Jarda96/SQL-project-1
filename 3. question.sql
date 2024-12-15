@@ -5,7 +5,7 @@
 -- přídání sloupce s rozdílem cen oproti předchozímu roku
 -- vytvoření view
 
-CREATE VIEW price_difference_per_category_over_time AS 
+CREATE VIEW v_price_difference_per_category_over_time AS 
 SELECT
 	avg_price,
 	price_category_name ,
@@ -26,7 +26,7 @@ WITH cte_avg_percent_increase AS (
 		SELECT 
 			*,
 			round(((avg_price_previous_year-avg_price)/avg_price_previous_year)*100) AS percent_increase
-		FROM price_difference_per_category_over_time AS pdpcot
+		FROM v_price_difference_per_category_over_time AS pdpcot
 		)
 SELECT 
 	price_category_name,
