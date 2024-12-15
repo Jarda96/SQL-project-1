@@ -74,6 +74,6 @@ SELECT
 FROM 
 	v_price_percent_increase_per_year AS ppipy 
 	JOIN v_payroll_percent_increase_per_year AS ppipy2
-	ON ppipy2.payroll_year = ppipy.price_year ;
+		ON ppipy2.payroll_year = ppipy.price_year ;
 
 
