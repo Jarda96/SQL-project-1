@@ -267,7 +267,7 @@ WHERE industry_branch_code = 'L'
 GROUP BY payroll_year, industry_branch_code
 ORDER BY industry_branch_code, payroll_year ;
 
--- mzdy pro sektor M: Činnosti v oblasti nemovitostí
+-- mzdy pro sektor M: Profesní, vědecké a technické činnosti
 SELECT
 	payroll_per_year,
 	industry_branch_code,
