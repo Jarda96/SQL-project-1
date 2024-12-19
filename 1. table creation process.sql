@@ -1,3 +1,7 @@
+--github name: Jarda96
+
+
+
 -- vytvoření 1. tabulky
 
 /*
