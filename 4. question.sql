@@ -60,10 +60,10 @@ GROUP BY price_year;
 -- join obou views
 
 SELECT
-	price_year,
+	price_year AS YEAR,
 	sum_of_avg_price,
-	price_percent_increase,
 	payroll_per_year,
+	price_percent_increase,
 	payroll_percent_increase,
 	price_percent_increase-payroll_percent_increase AS percent_increase_difference,
 	CASE

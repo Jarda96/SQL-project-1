@@ -44,20 +44,9 @@ FROM czechia_price AS cp
 	ON cpc.code = cp.category_code
 GROUP BY category_code, price_year;
 
+/
 /*
- * 3. HDP - vytvoření view	
- */
-
-CREATE VIEW v_czechia_gdp as
-SELECT 
-	country,
-	YEAR AS gdp_year,
-	GDP
-FROM economies AS e
-WHERE country = 'Czech Republic' AND GDP IS NOT NULL;
-
-/*
- * 3. finální vytvoření tabulky propojením view s tabulkou mezd, view s tabulkou cen a s view s HDP
+ * 3. finální vytvoření tabulky propojením view s tabulkou mezda a view s tabulkou cen
  */
 
 CREATE TABLE t_jaroslav_cermak_project_SQL_primary_final as
@@ -66,9 +55,7 @@ SELECT
 FROM
 	v_czechia_payroll_per_industry_branch AS cppib
 	JOIN v_czechia_price_per_category  AS cppc 
-		ON cppc.price_year = cppib.payroll_year
-	JOIN v_czechia_gdp AS cg
-		ON cppc.price_year = cg.gdp_year;
+		ON cppc.price_year = cppib.payroll_year;
 
 	
 	

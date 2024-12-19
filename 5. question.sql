@@ -12,19 +12,10 @@ SELECT
 	GDP_year,
 	LAG(avg(GDP)) OVER (ORDER BY GDP_year) AS avg_GDP_previous_year,
 	avg(GDP) - lag(avg(GDP)) OVER (ORDER BY GDP_year) AS avg_GDP_difference
-FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
+FROM t_jaroslav_cermak_project_sql_secondary_final AS tjcpssf
 GROUP BY price_year;
 
 
--- výpočet percentuálních změn HDP v čase
--- vytvoření view
-
-CREATE VIEW v_HDP_percent_increase_per_year AS
-SELECT 
-	*,
-	round(((avg_GDP_previous_year-avg_GDP)/avg_GDP_previous_year)*100,1) AS GDP_percent_increase
-FROM v_GDP_difference_over_time AS pdot
-GROUP BY GDP_year;
 
 -- napojení ročních percentuálních změn HDP na tabulku s výpočtem percentuálních změn cen potravin a výšky mezd
 -- pomocí podmínek zodpovězení otázky
