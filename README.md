@@ -1,6 +1,6 @@
 # SQL-project-1
 ---
-## Projekt v rámci kurzu Datová analýza 26.09.2024 zabývající se výzkumnými otázkami ohledně životní úrovně občanů a dostupností základních potravin.
+## Zadání projektu v rámci kurzu datová analýza by Engeto Academy
 
 **Úvod do projektu**
 
@@ -23,5 +23,5 @@ Výstupem projektu budou dvě hlavní tabulky v databázi, ze kterých se požad
 
 **SQL Skripty**
 
-Připravíme sadu SQL skriptů, které z výše uvedených tabulek získají datový podklad k odpovězení na vytyčené výzkumné otázky.
+Připravíme sadu SQL skriptů, které z výše uvedených tabulek získají datový podklad k zodpovězení na vytyčené výzkumné otázky.
 
