@@ -67,9 +67,9 @@ SELECT
 	payroll_percent_increase,
 	price_percent_increase-payroll_percent_increase AS percent_increase_difference,
 	CASE
-		WHEN price_percent_increase-payroll_percent_increase < -10 THEN "significant increase"
-		WHEN price_percent_increase-payroll_percent_increase < 0 THEN "increase"
-		ELSE "decrease"
+		WHEN price_percent_increase-payroll_percent_increase < -10 THEN 'significant increase'
+		WHEN price_percent_increase-payroll_percent_increase < 0 THEN 'increase'
+		ELSE 'decrease'
 	END AS status	
 FROM 
 	v_price_percent_increase_per_year AS ppipy 

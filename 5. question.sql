@@ -38,19 +38,19 @@ SELECT
 	payroll_percent_increase,
 	gdp_percent_increase,
 	CASE
-		WHEN gdp_percent_increase < -3 THEN "Significant GDP increase"
-		WHEN gdp_percent_increase < 0 THEN "Normal GDP increase"
-		ELSE "GDP decrease"
+		WHEN gdp_percent_increase < -3 THEN 'Significant GDP increase'
+		WHEN gdp_percent_increase < 0 THEN 'Normal GDP increase'
+		ELSE 'GDP decrease'
 	END AS gdp_increase_status,
 	CASE
-		WHEN payroll_percent_increase < -3 THEN "Significant payroll increase"
-		WHEN payroll_percent_increase < 0 THEN "Payroll increase"
-		ELSE "Payroll decrease"
+		WHEN payroll_percent_increase < -3 THEN 'Significant payroll increase'
+		WHEN payroll_percent_increase < 0 THEN 'Payroll increase'
+		ELSE 'Payroll decrease'
 	END AS payroll_change_status,
-	CASE
-		WHEN price_percent_increase < -3 THEN "Significant price increase"
-		WHEN price_percent_increase < 0 THEN "Price increase"
-		ELSE "Price decrease"
+	CASE 
+		WHEN price_percent_increase < -3 THEN 'Significant price increase'
+		WHEN price_percent_increase < 0 THEN 'Price increase'
+		ELSE 'Price decrease'
 	END AS price_change_status
 FROM 
 	v_price_percent_increase_per_year AS ppipy 

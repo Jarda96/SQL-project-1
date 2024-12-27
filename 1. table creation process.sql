@@ -16,7 +16,7 @@
 
 CREATE VIEW v_czechia_payroll_per_industry_branch AS
 SELECT 
-	sum(value) AS payroll_per_year,
+	round(avg(value)) AS payroll_per_year,
 	industry_branch_code ,
 	name AS industry_branch_name,
 	payroll_year
@@ -25,11 +25,11 @@ FROM czechia_payroll AS cp
 	ON cpib.code = cp.industry_branch_code
 WHERE
 		value IS NOT NULL
-		AND value_type_code = '5958'
-		AND unit_code = '200'
-		AND calculation_code = '100'
+		AND value_type_code = 5958
+		AND unit_code = 200
+		AND calculation_code = 100
 GROUP BY payroll_year, industry_branch_code 
-ORDER BY payroll_year ;
+ORDER BY payroll_year;
 /*
  * 2. ceny - vytvoření view
  * 		vytažení roku z datumu (date_to)
