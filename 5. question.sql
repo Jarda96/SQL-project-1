@@ -1,5 +1,4 @@
-/*
-*Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
+/* Má výška HDP vliv na změny ve mzdách a cenách potravin? Neboli, pokud HDP vzroste výrazněji v jednom roce, projeví se to na cenách potravin či mzdách ve stejném nebo násdujícím roce výraznějším růstem?
 */
 
 -- přidání sloupce s HDP za předchozí rok
@@ -15,11 +14,8 @@ SELECT
 FROM t_jaroslav_cermak_project_sql_secondary_final AS tjcpssf
 GROUP BY price_year;
 
-
-
 -- napojení ročních percentuálních změn HDP na tabulku s výpočtem percentuálních změn cen potravin a výšky mezd
 -- pomocí podmínek zodpovězení otázky
-
 
 WITH cte_gdp_per_year AS (
 				SELECT 

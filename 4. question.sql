@@ -14,7 +14,6 @@ SELECT
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 GROUP BY payroll_year;
 
-
 -- výpočet percentuálních změn mezd v čase
 -- vytvoření view
 
@@ -23,9 +22,6 @@ SELECT
 	*,
 	round(((payroll_previous_year-payroll_per_year) / payroll_previous_year)*100,1) AS payroll_percent_increase
 FROM v_payroll_difference_over_time AS pdot;
-
-
-
 
 -- výpočet sumy cen za jednotlivé roky
 -- přidání sloupce s cenou za předchozí rok
@@ -43,7 +39,6 @@ SELECT
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 GROUP BY price_year;
 
-
 -- výpočet percentuálních změn cen potravin v čase
 -- vytvoření view
 
@@ -53,8 +48,6 @@ SELECT
 	round(((avg_price_previous_year-sum_of_avg_price)/avg_price_previous_year)*100,1) AS price_percent_increase
 FROM v_price_difference_over_time AS pdot
 GROUP BY price_year;
-
-
 
 -- výpočet rozdílu meziročního nárůstu cen potravin a mezd
 -- join obou views
@@ -75,5 +68,3 @@ FROM
 	v_price_percent_increase_per_year AS ppipy 
 	JOIN v_payroll_percent_increase_per_year AS ppipy2
 		ON ppipy2.payroll_year = ppipy.price_year ;
-
-

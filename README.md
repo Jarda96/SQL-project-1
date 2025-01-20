@@ -1,5 +1,8 @@
 # SQL-project-1
 ---
+github name: Jarda96
+discord name: jarek.cermak
+---
 ## Zadání projektu v rámci kurzu datová analýza by Engeto Academy
 
 **Úvod do projektu**

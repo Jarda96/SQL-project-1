@@ -8,9 +8,9 @@
 CREATE VIEW v_price_difference_per_category_over_time AS 
 SELECT
 	avg_price,
-	price_category_name ,
-	price_value ,
-	price_unit ,
+	price_category_name,
+	price_value,
+	price_unit,
 	price_year,
 	LAG(avg_price) OVER (
 						PARTITION BY price_category_name ORDER BY price_year) AS avg_price_previous_year,
@@ -18,7 +18,6 @@ SELECT
 						PARTITION BY price_category_name ORDER BY price_year) AS avg_price_difference
 FROM t_jaroslav_cermak_project_sql_primary_final AS tjcpspf
 GROUP BY price_category_name, price_year;
-
 
 -- výpočet percentuálních změn cen potravin v čase
 
@@ -40,4 +39,3 @@ SELECT
 FROM cte_avg_percent_increase
 GROUP BY price_category_name
 ORDER BY avg_percent_increase_per_category_name desc;
-
